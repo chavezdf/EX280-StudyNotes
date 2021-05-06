@@ -1,3 +1,29 @@
+GENERAR CERTIFICADO AUTOFIRMADO
+===============================
+
+Uno de los objetivos del examen es poder generar un certificado autofirmado y utilizarlo para agregarlos a OC.
+
+**Pasos:**
+
+1.- Creo la clave privada:   
+```
+$	openssl genrsa -out clave.key 2048
+```
+2.- Genero la solicitud de firma de certificado usando la clave anterior: 
+```	
+$	openssl req -new -key clave.key -out firma.csr -subj "/C=ES/ST=Madrid/L=Madrid/O=MiEmpresa/OU=IT/CN=midominio.prefijo.com" 
+```
+> El subcomand **-subj "/C=ES/ST=Madrid/L=Madrid/O=MiEmpresa/OU=IT/CN=midominio.prefijo.com"** se puede obviar y te hara las preguntas
+
+3.- Genero el certificado autofirmado usando la clave y la solicitud de firma de certificado:
+```
+$	openssl x509 -req -days 366 -in firma.csr -signkey clave.key -out certificado.crt
+```	
+4.- Creo la ruta segura:
+```
+$	oc create route edge tiempo-sec --service=tiempo --hostname=eltiempo-seguro.${RHT_OCP4_WILDCARD_DOMAIN} --key=clave.key --cert=certificado.crt
+```
+
 RUTA EDGE
 =========
 La comunicación va encriptada del cliente hasta el router de OpenShift.
@@ -8,6 +34,8 @@ La comunicación va encriptada del cliente hasta el router de OpenShift.
 ```
 $ oc create route edge <nombre-ruta> --service <nombre-servicio> --hostname <URL>
 ```
+Los pasos siguientes son pasa validar que se esta usando el certificado de openshift-ingress-operator. Para ello lo descargas y luego lo usas para validarlo contra tu app con curl.
+
 2.- Extraer el certificado del router de OpenShift del operator "openshift-ingress-operator":
 ```
 $ oc extract secrets/router-ca --keys tls.crt -n openshift-ingress-operator
