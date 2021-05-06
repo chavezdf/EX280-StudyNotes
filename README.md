@@ -1,4 +1,4 @@
-# EX280-Objectives
+# EX280-Objectives 06/05/2021
 
 > Objetivos publicados por REDHAT en el siguiente enlace:
 > htps://www.redhat.com/es/services/training/ex280-red-hat-certificate-expertise-platform-service-exam?section=Objetivos
