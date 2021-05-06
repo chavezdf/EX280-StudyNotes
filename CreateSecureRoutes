@@ -47,3 +47,11 @@ Pasos:
 7.- Probar la ruta desde fuera del cluster con:
 
   curl -I -v --cacert <fichero.crt> https://<URL>
+
+¿Cómo hacer que, si se tiene una ruta segura, al hacer http://<url-ruta-segura> se haga la redirección a https://<url-ruta-segura>?
+
+Al crear la ruta segura con "oc create route edge" añadir el parámetro --insecure-policy=Redirect
+Con esto, en el "spec" de la ruta veré, dentro del bloque "tls", el atributo "insecureEdgeTerminationPolicy" con valor "Redirect"
+
+Refs.: oc explain route.spec.tls y
+oc create route edge --help
