@@ -25,3 +25,21 @@ Quiero cambiar el nombre de la app
 Quiero cambiar el nombre de un proyecto
 Quiero cambiear el image stream 
 Como editar un build config.
+
+He creado un Proyecto y no agregue la descripcion, como lo agrego sin borrar el proyecto.
+
+oc edit <nom-proyecto>
+  
+Se edita con vi el campo de descripcion y se guarda.
+
+Cuando en un build no se expone el servicio, se puede crear manual:
+
+oc expose dc/<Nom-Deploymentconfig> --port=<port> --target-port=<pod-port>
+  
+Como inyectarle o crear una variable de entorno en un POD:
+
+Se realiza desde un deployment config para que persista. Ya que el POD se crea a partir de esa configuracion.
+
+oc set env dc/<nom-deploymentconfig> RESPONSE="<valor>"
+  
+  
