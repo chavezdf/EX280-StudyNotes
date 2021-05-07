@@ -34,10 +34,10 @@ Para obtener la acreditación Red Hat Certified Specialist in OpenShift Administ
   
 **Configuración de los elementos de la red**
   - Solucionar los problemas relacionados con la red definida por software
-  - Crear y editar rutas externas
-  - Controlar el acceso a la red del clúster
-  - Crear un certificado autofirmado
-  - Proteger las rutas con los certificados TLS
+  - Crear y editar rutas externas (uso de expose)
+  - Controlar el acceso a la red del clúster 
+  - Crear un certificado autofirmado (Agregar Certificado Autofirmado)
+  - Proteger las rutas con los certificados TLS (Edge, Passtrough, Re-encrypt)
   
 **Configuración de la programación de pods**
   - Limitar el uso de los recursos
