@@ -42,4 +42,8 @@ Se realiza desde un deployment config para que persista. Ya que el POD se crea a
 
 oc set env dc/<nom-deploymentconfig> RESPONSE="<valor>"
   
+**Como aislar las redes de los proyectos por defecto?**
+
+Se debe crear una politica de RED que se agregara al template de creacion de proyectos para que cada vez que se crea un proyecto tenga la politica generada. En esa politica se debe permitir el accesso de los operators de **monitoreo** e **ingress**.
+  
   
