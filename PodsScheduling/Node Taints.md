@@ -1,4 +1,4 @@
-NODE TAINTS					Last Updated: 12-Dic-2020
+NODE TAINTS					Last Updated: 10-Mayo-2021
 ============
 
 TAINTS
@@ -9,7 +9,7 @@ Se especifican en el "NodeSpec" del nodo
 Un  taint está compuesto de:
 	- key: string de 253 caracteres. Debe empezar por letra o nº y luego los caracteres: letra, nº, punto, guión y guión bajo. 
 
-	- value: string de 63 caracteres. Debe empezar pdebe empezar por letra o nº y luego los caracteres: letra, nº, punto, guión y guión bajo. 
+	- value: string de 63 caracteres. Debe empezar por letra o nº y luego los caracteres: letra, nº, punto, guión y guión bajo. 
 		
 	- effect: puede ser uno de los 3 siguientes:
 
@@ -72,9 +72,9 @@ REFs:
 
  Controlling pod placement using node taints:
 
-	https://docs.openshift.com/container-platform/4.2/nodes/scheduling/nodes-scheduler-taints-tolerations.html
+	https://docs.openshift.com/container-platform/4.5/nodes/scheduling/nodes-scheduler-taints-tolerations.html
 
-	https://docs.openshift.com/container-platform/4.2/cli_reference/openshift_cli/administrator-cli-commands.html#taint
+	https://docs.openshift.com/container-platform/4.5/cli_reference/openshift_cli/administrator-cli-commands.html#taint
 
  Pod Evictions based on Taints/Tolerations:
 
