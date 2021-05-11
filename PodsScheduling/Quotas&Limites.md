@@ -32,7 +32,7 @@ Sólo usuarios con role de cluster-admin (se puede tener este role sólo en un/o
 
 * Quotas:
 
- *Están dentro de un proyecto* y aplican a los recursos de ese proyecto. 
+ **Están dentro de un proyecto** y aplican a los recursos de ese proyecto. 
 
  Limitan cuántos recursos de un tipo se pueden crear (evitan crecimiento desmedido de Etcd) o cuánto se puede utilizar de recursos de computación (evitan utilización masiva de recursos de los nodos).
 
@@ -46,7 +46,7 @@ Sólo usuarios con role de cluster-admin (se puede tener este role sólo en un/o
 
 * Límites:
 
- *Están dentro de un proyecto*. Valores por defecto para pods y containers de "resource request" y "resource limits".
+ **Están dentro de un proyecto**. Valores por defecto para pods y containers de "resource request" y "resource limits".
 
  Se evalúan en Run-time, limitan la máx. cantidad de recursos que un contenedor/pod puede usar en runtime.
 
@@ -58,7 +58,7 @@ Sólo usuarios con role de cluster-admin (se puede tener este role sólo en un/o
 
 * Clúster Quotas:
 
- *No están en ningún proyecto, van a nivel de clúster*.
+ **No están en ningún proyecto, van a nivel de clúster**.
  Afectan a varios proyectos. Evitan ir proyecto por proyecto definiendo cuotas.
 
  Se pueden poner por "owner" (usando una anotación que lleva el proyecto) o por una etiqueta que lleven los proyectos.
