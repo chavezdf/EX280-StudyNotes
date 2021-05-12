@@ -91,7 +91,7 @@ Configuracion de  ROLES
 
 Cuando se installa por primera vez el openshift se debe crear un usuario **CLUSTERADMIN**:
 
-	oc admin policy add-cluster-role-to-user cluster-admin **admin**
+	oc admin policy add-cluster-role-to-user cluster-admin admin
 
 
 
