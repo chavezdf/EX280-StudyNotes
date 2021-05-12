@@ -89,9 +89,30 @@ Configuracion de  ROLES
 =======================
 > NOTA: Una vez añadidos los usuarios, habría que configurar roles para ellos.
 
-Cuando se installa por primera vez el openshift se debe crear un usuario **CLUSTERADMIN**:
+Cuando se installa por primera vez el openshift se debe crear un usuario y asignarle el rol **CLUSTERADMIN** para no seguir usando el **Kubeadmin**:
 
-	oc admin policy add-cluster-role-to-user cluster-admin admin
+	oc adm policy add-cluster-role-to-user cluster-admin <nombre_usuario>
 
+**Objetivo:** Crear un grupo que tenga privilegios para crear proyectos y quitar este privilegios al resto de usuarios:
+
+1.- Asignar el rol de cluster **self-provisioner** a un <nombre_groupo> para que puedan crear proyectos:
+
+	oc adm policy add-cluster-role-to-group self-provisioner <nombre_grupo>
+
+2.- Quitar el privilegio de crear proyectos al resto de usuarios.
+
+Para ello debemos quitar del grupo **system:authenticated:oauth** el rol de cluster **self-provisioner**:
+
+	oc adm policy remove-cluster-role-from-group self-provisioneer system:authenticated:oauth
+	
+**Objetivo:** Permitir a miembros de <nobmre_grupo> crear o borrar (edit) recursos en un <proyecto>:
+	
+	oc policy add-role-to-group edit <grupo>
+
+> oc policy add-role-to-group <policy_type> <grupo>
+
+Para consultar lo asignado:
+
+	oc get rolebindings.authorization.openshift.io <grupo>
 
 
