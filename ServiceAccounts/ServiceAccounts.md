@@ -9,9 +9,9 @@ Cuando un proyecto se crea con el comando "oc new-project" o usando la consola W
 	builder -> usada por el pod de contrucción
 	default -> usada por el resto de pods que se creen en el proyecto
 
-La SA default tiene asociada la SCC restricted.
+La SA default tiene asociada la SCC **restricted**.
 
-En ocasiones, un pod necesita otra SCC, p.e. anyuid, entonces hay que cambiar la Service Account "default" por otra que tenga asociada la SCC necesaria.
+En ocasiones, un pod necesita otra SCC, p.e. **anyuid**, entonces hay que cambiar la Service Account "default" por otra que tenga asociada la SCC necesaria.
 
 Pasos:
 
