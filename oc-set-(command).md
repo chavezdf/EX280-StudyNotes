@@ -9,7 +9,7 @@
 
 **oc set volume** Agregar solicitud de volumen en deplyment ó deployment config
 
-    oc set volume {deployment ó dc} --add --name {pvc_name} --type pvc --claim-size {pvc_size} --claim-mode {mode} --mount-path {path}
+    oc set volume {deployment ó dc} --add --type pvc --name {pvc_name} --claim-name {nom_claim}  --claim-size {pvc_size} --claim-mode {mode} --mount-path {path}
 
 **oc set data** Agregar data a un secret ya creado.
 
