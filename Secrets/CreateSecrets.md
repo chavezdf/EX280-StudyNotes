@@ -10,3 +10,9 @@
     oc set env <deployment o dc> --prefix PREFIX_ --from secret/<nom_secret>
     
    > --prefix: Para agregar a la variable el prefijo deseado.
+
+**Objetivo:** Visualizar contenido de secret
+
+    oc extract secret/{nom_secret} --to -
+  
+  > El signo "-" al final significa, sacar el resultado por pantalla.
