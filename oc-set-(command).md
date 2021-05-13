@@ -6,6 +6,7 @@
     oc set env {deployment ó dc} {key}={value} --prefix PREFIX
     oc set env {deployment ó dc} --from secret/{nom_secret} --prefix PREFIX
     oc set env {deployment ó dc} --from configmap/{nom_config_map} --prefix PREFIX
+    oc set env {deployment ó dc} 
 
 **oc set volume** Agregar solicitud de volumen en deplyment ó deployment config
 
