@@ -6,7 +6,10 @@
     oc set env {deployment ó dc} {key}={value} --prefix PREFIX
     oc set env {deployment ó dc} --from secret/{nom_secret} --prefix PREFIX
     oc set env {deployment ó dc} --from configmap/{nom_config_map} --prefix PREFIX
-    oc set env {deployment ó dc} 
+
+**oc set env** Listar variables de entorno que estan incluidas en el deployment o deployment-config
+
+    oc set env {deployment ó dc} --list
 
 **oc set volume** Agregar solicitud de volumen en deplyment ó deployment config
 
