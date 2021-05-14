@@ -8,7 +8,7 @@ Paso 2: Editar la plantilla:
 
 Se deben colocar la definicion de recursos de NetworkPolicies, Limits and Quotes.
 
-´´´
+```yaml
 # NetworkPolicies
 - apiVersion: networking.k8s.io/v1
   kind: NetworkPolicy
@@ -62,6 +62,6 @@ Se deben colocar la definicion de recursos de NetworkPolicies, Limits and Quotes
       limits.cpu: '4'
       limits.memory: 4Gi
 
-´´´
+```
 
   
